@@ -16,7 +16,7 @@ You may also see any lint errors in the console.
 
 ### `Login Page`
 
-Page ini merupakan awal dari aplikasi, user bisa memasukkan username dan password sesuai untuk login menuju page utam.
+Page ini merupakan awal dari aplikasi, user bisa memasukkan username dan password sesuai untuk login menuju page utama.
 Disini juga dapat masuk secara otomatis melalui akun google atau facebook. Diinformasikan ini hanya untuk project latihan, jadi tolong untuk tidak menggunakan data sensitif di dalam codingan. Untuk login menggunakan facebook tidak dapat digunakan secara maksimal fiturnya karena perlu mendeploy aplikasi (hanya dapat dilakukan dengan https)
 
 
