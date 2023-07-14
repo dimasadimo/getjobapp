@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Container, Row, Col, Card, CardBody, CardTitle, Spinner, ListGroup} from 'reactstrap';
+import { Container, Row, Col, Card, CardBody, CardTitle, Spinner, ListGroup, CardLink} from 'reactstrap';
 import { BiArrowBack } from 'react-icons/bi';
 
 const JOB_DETAIL_URL = 'http://dev3.dansmultipro.co.id/api/recruitment/positions/'
@@ -33,7 +33,7 @@ const JobDetails = () => {
       setErr(true);
      }
    }
-  console.log(jobDetail);
+  
   return (
     <Container className="mx-auto mt-5 mb-5" style={{width: '1000', maxWidth: 'calc(100% - 30%)'}}>
       <Row>
@@ -76,11 +76,37 @@ const JobDetails = () => {
             </CardBody>
             <ListGroup flush>
               <Row>
-                <Col md={8} className='p-5'>
+                <Col md={7} className='p-5'>
                   <div dangerouslySetInnerHTML={{__html: jobDetail.description}} />
                 </Col>
-                <Col md={4} className='p-5'>
-                  gaga
+                <Col md={5} className='p-5'>
+                  <Card className='mb-5'>
+                    <CardBody>
+                      <CardTitle tag="p">
+                        <strong>{jobDetail.company}</strong>
+                      </CardTitle>
+                    </CardBody>
+                    <ListGroup flush>
+                      <img
+                        alt=""
+                        src={jobDetail.company_logo}
+                        width="100%"
+                      />
+                      <CardLink className='p-3'>
+                        {jobDetail.company_url}
+                      </CardLink>
+                    </ListGroup>
+                  </Card>
+                  <Card>
+                    <CardBody>
+                      <CardTitle tag="p">
+                        <strong>How to apply</strong>
+                      </CardTitle>
+                    </CardBody>
+                    <ListGroup flush>
+                      <div className='p-3' dangerouslySetInnerHTML={{__html: jobDetail.how_to_apply}} />
+                    </ListGroup>
+                  </Card>
                 </Col>
               </Row>
             </ListGroup>
